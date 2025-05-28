@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   bool _isError = false;
 
   void login() async {
-    if (_username.text.trim() == "123220151" && _password.text == "jokowi") {
+    if (_username.text.trim() == "123220151" && _password.text == "12345678") {
       setState(() {
         _isError = false;
       });
