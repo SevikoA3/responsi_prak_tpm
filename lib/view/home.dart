@@ -4,6 +4,7 @@ import 'package:responsi_prak_tpm/model/movies.dart';
 import 'package:responsi_prak_tpm/view/edit_movie_page.dart';
 import 'package:responsi_prak_tpm/view/movie_detail_page.dart';
 import 'package:responsi_prak_tpm/view/new_movie_page.dart';
+import 'package:responsi_prak_tpm/util/local_storage.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,14 +14,29 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  String? username;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUsername();
+  }
+
+  Future<void> _loadUsername() async {
+    final name = await LocalStorage.getUsername();
+    setState(() {
+      username = name;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple[100],
-        title: const Text(
-          'Halo, 123220151',
-          style: TextStyle(color: Colors.black),
+        title: Text(
+          'Halo, ${username ?? "-"}',
+          style: const TextStyle(color: Colors.black),
         ),
         centerTitle: true,
         elevation: 0,
