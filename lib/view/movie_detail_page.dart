@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class MovieDetailPage extends StatefulWidget {
   final int movieId;
-  const MovieDetailPage({Key? key, required this.movieId}) : super(key: key);
+  const MovieDetailPage({Key? key, required this.movieId});
 
   @override
   State<MovieDetailPage> createState() => _MovieDetailPageState();

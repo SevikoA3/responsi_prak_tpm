@@ -5,7 +5,7 @@ import 'package:responsi_prak_tpm/view/home.dart';
 
 class EditMoviePage extends StatefulWidget {
   final int movieId;
-  const EditMoviePage({Key? key, required this.movieId}) : super(key: key);
+  const EditMoviePage({Key? key, required this.movieId});
 
   @override
   State<EditMoviePage> createState() => _EditMoviePageState();

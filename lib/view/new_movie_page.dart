@@ -4,7 +4,7 @@ import 'package:responsi_prak_tpm/model/movies.dart';
 import 'package:responsi_prak_tpm/view/home.dart';
 
 class NewMoviePage extends StatefulWidget {
-  const NewMoviePage({Key? key}) : super(key: key);
+  const NewMoviePage({Key? key});
 
   @override
   State<NewMoviePage> createState() => _NewMoviePageState();
