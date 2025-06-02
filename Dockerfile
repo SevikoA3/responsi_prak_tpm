@@ -1,9 +1,9 @@
 # Stage 1: build flutter web
-FROM dart:stable AS build
+FROM cirrusci/flutter:stable AS build
 
 WORKDIR /app
 COPY . .
-RUN dart pub get
+RUN flutter pub get
 RUN flutter build web
 
 # Stage 2: serve static web with Nginx/Node/dhttpd/serve
