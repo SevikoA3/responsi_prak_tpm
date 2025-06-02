@@ -1,5 +1,5 @@
 # Stage 1: build flutter web
-FROM cirrusci/flutter:stable AS build
+FROM instrumentisto/flutter AS build
 
 WORKDIR /app
 COPY . .
@@ -7,7 +7,7 @@ RUN flutter pub get
 RUN flutter build web
 
 # Stage 2: serve static web with Nginx/Node/dhttpd/serve
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 RUN npm install -g serve
